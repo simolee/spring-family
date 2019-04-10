@@ -29,6 +29,6 @@ public class PerformanceAspect {
         }
     }
 
-    @Pointcut("execution(* sample.performanceaspectdemo.repository..*(..))")
+    @Pointcut("execution(* com.simon.sample.performanceaspectdemo.repository..*(..))")
     private void repositoryOps() {}
 }

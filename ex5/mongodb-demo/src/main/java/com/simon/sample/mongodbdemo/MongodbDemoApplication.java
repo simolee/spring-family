@@ -47,7 +47,7 @@ public class MongodbDemoApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        startFromInsertion(() ->{
+        startFromInsertion(() -> {
             log.info("Runnable");
             decreaseHighPrice();
         });
@@ -58,7 +58,7 @@ public class MongodbDemoApplication implements ApplicationRunner {
     private void startFromInsertion(Runnable runnable) {
         mongoTemplate.insertAll(initCoffee())
                 .publishOn(Schedulers.elastic())
-                .doOnNext(c ->log.info("Next: {}", c))
+                .doOnNext(c -> log.info("Next: {}", c))
                 .doOnComplete(runnable)
                 .doFinally(s -> {
                     cdl.countDown();

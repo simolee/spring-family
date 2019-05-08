@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.simon.sample</groupId>
-    <artifactId>springbucks</artifactId>
+    <artifactId>exception-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springbucks</name>
+    <name>exception-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -80,6 +80,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
+            <scope>runtime</scope>
         </dependency>
 
     </dependencies>
@@ -89,6 +90,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>

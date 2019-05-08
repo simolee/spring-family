@@ -29,7 +29,6 @@ public class CoffeeService {
     }
 
     public Coffee getCoffee(Long id) {
-//        return coffeeRepository.findById(id).get();
         return coffeeRepository.getOne(id);
     }
 
